@@ -109,36 +109,48 @@ This website supports all modern browsers including:
 
 ## 🚀 Deployment
 
-The built static files can be deployed to any static hosting service:
-- Netlify
-- Vercel
-- GitHub Pages
-- Firebase Hosting
-- AWS S3 + CloudFront
+### GitHub Pages (Recommended - Free)
+
+This site is configured for automatic deployment to GitHub Pages. Here's how to deploy:
+
+#### First-Time Setup:
+1. **Enable GitHub Pages** in your repository:
+   - Go to your repository on GitHub
+   - Click **Settings** → **Pages**
+   - Under "Build and deployment", select **GitHub Actions** as the source
+   - Save the settings
+
+2. **Push your code** to the master branch:
+   ```bash
+   git add .
+   git commit -m "Deploy website"
+   git push origin master
+   ```
+
+3. **Automatic deployment** will begin immediately
+   - GitHub Actions will build and deploy your site
+   - Find your live site at: `https://zrpcarroll.github.io/PersonalSite/`
+   - Check deployment status in the "Actions" tab on GitHub
+
+#### Manual Deployment (Alternative):
+```bash
+npm run deploy
+```
+
+This will build and deploy to the gh-pages branch.
+
+### Other Hosting Options
+
+The built static files (`dist/` folder) can also be deployed to:
+- **Netlify**: Drag & drop the `dist` folder at [netlify.com](https://netlify.com)
+- **Vercel**: Connect your GitHub repo at [vercel.com](https://vercel.com)
+- **Cloudflare Pages**: Deploy via GitHub integration
+- **Firebase Hosting**: `npm install -g firebase-tools && firebase init`
 
 ## 📄 License
 
 This project is open source and available under the MIT License.
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+Built with ❤️ by Zeph Carroll
