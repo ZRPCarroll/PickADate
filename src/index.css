@@ -24,7 +24,14 @@ body {
   min-height: 100vh;
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Initially hidden until theme is set */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show body after theme is ready */
+body.theme-ready {
+  opacity: 1;
 }
 
 /* Typography - Global Elements */
@@ -32,6 +39,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-heading);
   line-height: 1.2;
   font-weight: 600;
+  transition: color 0.6s ease;
 }
 
 h1 {
@@ -53,13 +61,14 @@ h4 {
 p {
   margin-bottom: 1rem;
   color: var(--text-primary);
+  transition: color 0.6s ease;
 }
 
 /* Global Link Styles */
 a {
   color: var(--accent-primary);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.6s ease;
 }
 
 a:hover {

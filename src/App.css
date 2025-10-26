@@ -3,6 +3,19 @@
    Layout & component-specific styles
    =================================== */
 
+/* Smooth theme transitions for elements using CSS variables */
+#root,
+.header,
+.footer,
+section,
+.ideas-section,
+.booking-button {
+  transition: background-color 0.6s ease, 
+              color 0.6s ease, 
+              border-color 0.6s ease,
+              box-shadow 0.6s ease;
+}
+
 /* Main App Container - Mobile First */
 #root {
   max-width: 100%;
@@ -51,7 +64,6 @@ section {
   border-radius: 16px;
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-primary);
-  transition: background-color 0.2s ease;
 }
 
 section h2 {
@@ -125,7 +137,8 @@ section p {
   border: none;
   cursor: pointer;
   box-shadow: 0 2px 4px var(--button-shadow);
-  transition: all 0.2s ease;
+  /* Only transition transform for hover effect, colors handled by theme transition */
+  transition: transform 0.2s ease;
   
   /* iOS minimum touch target */
   min-height: 44px;

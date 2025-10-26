@@ -1,5 +1,6 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { getThemeByTime } from '../util/TimeUtils'
+import Loading from './Loading'
 
 const applyTheme = (themeName: string) => {
   if (themeName === 'morning') {
@@ -10,10 +11,18 @@ const applyTheme = (themeName: string) => {
 }
 
 export default function AutoTheme() {
+  const [isLoading, setIsLoading] = useState(true)
+
   useEffect(() => {
-    // Apply theme on mount
+    // Apply theme immediately on mount
     const currentTheme = getThemeByTime()
     applyTheme(currentTheme)
+    
+    // Small delay to ensure theme is applied before hiding loader
+    setTimeout(() => {
+      setIsLoading(false)
+      document.body.classList.add('theme-ready')
+    }, 100)
     
     // Update theme every minute to catch time changes
     const interval = setInterval(() => {
@@ -24,6 +33,11 @@ export default function AutoTheme() {
     return () => clearInterval(interval)
   }, [])
 
-  // This component doesn't render anything
+  // Show loading screen while theme is being applied
+  if (isLoading) {
+    return <Loading />
+  }
+
+  // Once loaded, render nothing
   return null
 }
