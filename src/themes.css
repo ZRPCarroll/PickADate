@@ -1,0 +1,200 @@
+/* Theme System - Multiple theme support using CSS custom properties */
+
+/* Default Theme: Warm Sunset (Light) */
+:root {
+  /* Background colors */
+  --bg-primary: #fef9f3;
+  --bg-secondary: #fff8f0;
+  --bg-accent: #fef7f0;
+  --bg-hover: #fef5e7;
+  
+  /* Text colors */
+  --text-primary: #5d4037;
+  --text-heading: #8b4513;
+  --text-subheading: #a0522d;
+  --text-muted: #a0522d;
+  
+  /* Accent colors */
+  --accent-primary: #e67e22;
+  --accent-primary-hover: #d35400;
+  --accent-secondary: #e67e22;
+  
+  /* Border colors */
+  --border-primary: #f4e6d3;
+  --border-accent: #e67e22;
+  
+  /* Button colors */
+  --button-bg: #e67e22;
+  --button-bg-hover: #d35400;
+  --button-text: #ffffff;
+  --button-shadow: rgba(230, 126, 34, 0.2);
+  --button-shadow-hover: rgba(230, 126, 34, 0.3);
+  
+  /* Theme metadata */
+  --theme-name: "warm-sunset";
+}
+
+/* Dark Theme: Midnight Blue */
+[data-theme="dark"] {
+  /* Background colors */
+  --bg-primary: #1a1f2e;
+  --bg-secondary: #242938;
+  --bg-accent: #2d3343;
+  --bg-hover: #353b4d;
+  
+  /* Text colors */
+  --text-primary: #e4e6eb;
+  --text-heading: #f5f6f7;
+  --text-subheading: #b8bcc4;
+  --text-muted: #8a8f98;
+  
+  /* Accent colors */
+  --accent-primary: #5b9bd5;
+  --accent-primary-hover: #4a8bc2;
+  --accent-secondary: #5b9bd5;
+  
+  /* Border colors */
+  --border-primary: #3a3f51;
+  --border-accent: #5b9bd5;
+  
+  /* Button colors */
+  --button-bg: #5b9bd5;
+  --button-bg-hover: #4a8bc2;
+  --button-text: #ffffff;
+  --button-shadow: rgba(91, 155, 213, 0.3);
+  --button-shadow-hover: rgba(91, 155, 213, 0.5);
+  
+  --theme-name: "dark";
+}
+
+/* Ocean Breeze Theme: Cool Blues & Teals */
+[data-theme="ocean"] {
+  /* Background colors */
+  --bg-primary: #f0f8ff;
+  --bg-secondary: #e6f3ff;
+  --bg-accent: #d9edff;
+  --bg-hover: #cce6ff;
+  
+  /* Text colors */
+  --text-primary: #1e3a5f;
+  --text-heading: #0d3b66;
+  --text-subheading: #2e5a7d;
+  --text-muted: #5a7c9e;
+  
+  /* Accent colors */
+  --accent-primary: #00a8cc;
+  --accent-primary-hover: #008fb3;
+  --accent-secondary: #00a8cc;
+  
+  /* Border colors */
+  --border-primary: #b3d9f2;
+  --border-accent: #00a8cc;
+  
+  /* Button colors */
+  --button-bg: #00a8cc;
+  --button-bg-hover: #008fb3;
+  --button-text: #ffffff;
+  --button-shadow: rgba(0, 168, 204, 0.2);
+  --button-shadow-hover: rgba(0, 168, 204, 0.4);
+  
+  --theme-name: "ocean";
+}
+
+/* Forest Theme: Earthy Greens */
+[data-theme="forest"] {
+  /* Background colors */
+  --bg-primary: #f4f7f0;
+  --bg-secondary: #e8f0dd;
+  --bg-accent: #dce8cd;
+  --bg-hover: #d0e1bd;
+  
+  /* Text colors */
+  --text-primary: #2d3e2a;
+  --text-heading: #1e2d1a;
+  --text-subheading: #3d5c38;
+  --text-muted: #5a7a55;
+  
+  /* Accent colors */
+  --accent-primary: #4a7c59;
+  --accent-primary-hover: #3a6847;
+  --accent-secondary: #6b9b7c;
+  
+  /* Border colors */
+  --border-primary: #c3d6ba;
+  --border-accent: #4a7c59;
+  
+  /* Button colors */
+  --button-bg: #4a7c59;
+  --button-bg-hover: #3a6847;
+  --button-text: #ffffff;
+  --button-shadow: rgba(74, 124, 89, 0.2);
+  --button-shadow-hover: rgba(74, 124, 89, 0.4);
+  
+  --theme-name: "forest";
+}
+
+/* Lavender Dream Theme: Soft Purples */
+[data-theme="lavender"] {
+  /* Background colors */
+  --bg-primary: #f9f7fc;
+  --bg-secondary: #f3eef8;
+  --bg-accent: #ede5f4;
+  --bg-hover: #e7dcf0;
+  
+  /* Text colors */
+  --text-primary: #3d2e4f;
+  --text-heading: #2a1a3e;
+  --text-subheading: #5a4470;
+  --text-muted: #7a6490;
+  
+  /* Accent colors */
+  --accent-primary: #9b6fb9;
+  --accent-primary-hover: #8659a0;
+  --accent-secondary: #b88dd9;
+  
+  /* Border colors */
+  --border-primary: #d8c9e3;
+  --border-accent: #9b6fb9;
+  
+  /* Button colors */
+  --button-bg: #9b6fb9;
+  --button-bg-hover: #8659a0;
+  --button-text: #ffffff;
+  --button-shadow: rgba(155, 111, 185, 0.2);
+  --button-shadow-hover: rgba(155, 111, 185, 0.4);
+  
+  --theme-name: "lavender";
+}
+
+/* Sunset Glow Theme: Warm Pinks & Oranges */
+[data-theme="sunset"] {
+  /* Background colors */
+  --bg-primary: #fff5f0;
+  --bg-secondary: #ffe8dd;
+  --bg-accent: #ffdacc;
+  --bg-hover: #ffccb8;
+  
+  /* Text colors */
+  --text-primary: #5e2e2a;
+  --text-heading: #4a1e1a;
+  --text-subheading: #7d4540;
+  --text-muted: #9d6560;
+  
+  /* Accent colors */
+  --accent-primary: #ff6b6b;
+  --accent-primary-hover: #ee5a52;
+  --accent-secondary: #ff8787;
+  
+  /* Border colors */
+  --border-primary: #f5c9be;
+  --border-accent: #ff6b6b;
+  
+  /* Button colors */
+  --button-bg: #ff6b6b;
+  --button-bg-hover: #ee5a52;
+  --button-text: #ffffff;
+  --button-shadow: rgba(255, 107, 107, 0.2);
+  --button-shadow-hover: rgba(255, 107, 107, 0.4);
+  
+  --theme-name: "sunset";
+}
