@@ -1,6 +1,6 @@
-/* Theme System - Multiple theme support using CSS custom properties */
+/* Theme System - Time-of-day appropriate themes */
 
-/* Default Theme: Warm Sunset (Light) */
+/* Default Theme: Morning (Light & Fresh) */
 :root {
   /* Background colors */
   --bg-primary: #fef9f3;
@@ -31,110 +31,77 @@
   --button-shadow-hover: rgba(230, 126, 34, 0.3);
   
   /* Theme metadata */
-  --theme-name: "warm-sunset";
+  --theme-name: "morning";
 }
 
-/* Dark Theme: Midnight Blue */
-[data-theme="dark"] {
+/* Sunrise Theme: Soft Pinks & Warm Yellows */
+[data-theme="sunrise"] {
   /* Background colors */
-  --bg-primary: #1a1f2e;
-  --bg-secondary: #242938;
-  --bg-accent: #2d3343;
-  --bg-hover: #353b4d;
+  --bg-primary: #fff8f5;
+  --bg-secondary: #ffeee8;
+  --bg-accent: #ffe4db;
+  --bg-hover: #ffd9ce;
   
   /* Text colors */
-  --text-primary: #e4e6eb;
-  --text-heading: #f5f6f7;
-  --text-subheading: #b8bcc4;
-  --text-muted: #8a8f98;
+  --text-primary: #5e3a2e;
+  --text-heading: #7d3c26;
+  --text-subheading: #a0522d;
+  --text-muted: #b8775e;
   
   /* Accent colors */
-  --accent-primary: #5b9bd5;
-  --accent-primary-hover: #4a8bc2;
-  --accent-secondary: #5b9bd5;
+  --accent-primary: #ff8a65;
+  --accent-primary-hover: #ff6f4f;
+  --accent-secondary: #ffab91;
   
   /* Border colors */
-  --border-primary: #3a3f51;
-  --border-accent: #5b9bd5;
+  --border-primary: #ffd4c4;
+  --border-accent: #ff8a65;
   
   /* Button colors */
-  --button-bg: #5b9bd5;
-  --button-bg-hover: #4a8bc2;
+  --button-bg: #ff8a65;
+  --button-bg-hover: #ff6f4f;
   --button-text: #ffffff;
-  --button-shadow: rgba(91, 155, 213, 0.3);
-  --button-shadow-hover: rgba(91, 155, 213, 0.5);
+  --button-shadow: rgba(255, 138, 101, 0.2);
+  --button-shadow-hover: rgba(255, 138, 101, 0.35);
   
-  --theme-name: "dark";
+  --theme-name: "sunrise";
 }
 
-/* Ocean Breeze Theme: Cool Blues & Teals */
-[data-theme="ocean"] {
+/* Afternoon Theme: Bright & Energetic Blues */
+[data-theme="afternoon"] {
   /* Background colors */
-  --bg-primary: #f0f8ff;
-  --bg-secondary: #e6f3ff;
-  --bg-accent: #d9edff;
-  --bg-hover: #cce6ff;
+  --bg-primary: #f5f9fc;
+  --bg-secondary: #e8f3f9;
+  --bg-accent: #ddeef6;
+  --bg-hover: #d0e7f3;
   
   /* Text colors */
-  --text-primary: #1e3a5f;
-  --text-heading: #0d3b66;
+  --text-primary: #1a3d5c;
+  --text-heading: #0d2f4a;
   --text-subheading: #2e5a7d;
   --text-muted: #5a7c9e;
   
   /* Accent colors */
-  --accent-primary: #00a8cc;
-  --accent-primary-hover: #008fb3;
-  --accent-secondary: #00a8cc;
+  --accent-primary: #42a5f5;
+  --accent-primary-hover: #2196f3;
+  --accent-secondary: #64b5f6;
   
   /* Border colors */
-  --border-primary: #b3d9f2;
-  --border-accent: #00a8cc;
+  --border-primary: #bbdefb;
+  --border-accent: #42a5f5;
   
   /* Button colors */
-  --button-bg: #00a8cc;
-  --button-bg-hover: #008fb3;
+  --button-bg: #42a5f5;
+  --button-bg-hover: #2196f3;
   --button-text: #ffffff;
-  --button-shadow: rgba(0, 168, 204, 0.2);
-  --button-shadow-hover: rgba(0, 168, 204, 0.4);
+  --button-shadow: rgba(66, 165, 245, 0.25);
+  --button-shadow-hover: rgba(66, 165, 245, 0.4);
   
-  --theme-name: "ocean";
+  --theme-name: "afternoon";
 }
 
-/* Forest Theme: Earthy Greens */
-[data-theme="forest"] {
-  /* Background colors */
-  --bg-primary: #f4f7f0;
-  --bg-secondary: #e8f0dd;
-  --bg-accent: #dce8cd;
-  --bg-hover: #d0e1bd;
-  
-  /* Text colors */
-  --text-primary: #2d3e2a;
-  --text-heading: #1e2d1a;
-  --text-subheading: #3d5c38;
-  --text-muted: #5a7a55;
-  
-  /* Accent colors */
-  --accent-primary: #4a7c59;
-  --accent-primary-hover: #3a6847;
-  --accent-secondary: #6b9b7c;
-  
-  /* Border colors */
-  --border-primary: #c3d6ba;
-  --border-accent: #4a7c59;
-  
-  /* Button colors */
-  --button-bg: #4a7c59;
-  --button-bg-hover: #3a6847;
-  --button-text: #ffffff;
-  --button-shadow: rgba(74, 124, 89, 0.2);
-  --button-shadow-hover: rgba(74, 124, 89, 0.4);
-  
-  --theme-name: "forest";
-}
-
-/* Lavender Dream Theme: Soft Purples */
-[data-theme="lavender"] {
+/* Evening Theme: Soft Lilac & Lavender */
+[data-theme="evening"] {
   /* Background colors */
   --bg-primary: #f9f7fc;
   --bg-secondary: #f3eef8;
@@ -160,41 +127,41 @@
   --button-bg: #9b6fb9;
   --button-bg-hover: #8659a0;
   --button-text: #ffffff;
-  --button-shadow: rgba(155, 111, 185, 0.2);
+  --button-shadow: rgba(155, 111, 185, 0.25);
   --button-shadow-hover: rgba(155, 111, 185, 0.4);
   
-  --theme-name: "lavender";
+  --theme-name: "evening";
 }
 
-/* Sunset Glow Theme: Warm Pinks & Oranges */
-[data-theme="sunset"] {
+/* Night Theme: Deep Blues & Purples */
+[data-theme="night"] {
   /* Background colors */
-  --bg-primary: #fff5f0;
-  --bg-secondary: #ffe8dd;
-  --bg-accent: #ffdacc;
-  --bg-hover: #ffccb8;
+  --bg-primary: #1a1d2e;
+  --bg-secondary: #242938;
+  --bg-accent: #2d3343;
+  --bg-hover: #353b4d;
   
   /* Text colors */
-  --text-primary: #5e2e2a;
-  --text-heading: #4a1e1a;
-  --text-subheading: #7d4540;
-  --text-muted: #9d6560;
+  --text-primary: #e4e6eb;
+  --text-heading: #f5f6f7;
+  --text-subheading: #b8bcc4;
+  --text-muted: #8a8f98;
   
   /* Accent colors */
-  --accent-primary: #ff6b6b;
-  --accent-primary-hover: #ee5a52;
-  --accent-secondary: #ff8787;
+  --accent-primary: #7e57c2;
+  --accent-primary-hover: #673ab7;
+  --accent-secondary: #9575cd;
   
   /* Border colors */
-  --border-primary: #f5c9be;
-  --border-accent: #ff6b6b;
+  --border-primary: #3a3f51;
+  --border-accent: #7e57c2;
   
   /* Button colors */
-  --button-bg: #ff6b6b;
-  --button-bg-hover: #ee5a52;
+  --button-bg: #7e57c2;
+  --button-bg-hover: #673ab7;
   --button-text: #ffffff;
-  --button-shadow: rgba(255, 107, 107, 0.2);
-  --button-shadow-hover: rgba(255, 107, 107, 0.4);
+  --button-shadow: rgba(126, 87, 194, 0.3);
+  --button-shadow-hover: rgba(126, 87, 194, 0.5);
   
-  --theme-name: "sunset";
+  --theme-name: "night";
 }

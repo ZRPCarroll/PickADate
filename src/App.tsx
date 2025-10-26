@@ -1,12 +1,13 @@
 import './App.css'
-import ThemeSwitcher from './ThemeSwitcher'
+import AutoTheme from './components/AutoTheme'
+import { getTimeOfDay } from './util/TimeUtils'
 
 function App() {
   return (
     <>
-      <ThemeSwitcher />
+      <AutoTheme />
       <header className="header">
-        <h1>Welcome!</h1>
+        <h1>Good {getTimeOfDay()}!</h1>
       </header>
 
       <main className="main-content">

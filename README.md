@@ -5,13 +5,12 @@ A friendly, approachable personal website built with Vite + React + TypeScript, 
 ## 🌟 Features
 
 - **Casual & Friendly Design**: Welcoming layout that encourages connection
-- **Multiple Theme Support**: 6 different color themes to choose from
-  - Warm Sunset (default) - Cozy oranges and warm tones
-  - Dark Mode - Midnight blue with cool accents
-  - Ocean Breeze - Cool blues and teals
-  - Forest - Earthy greens
-  - Lavender Dream - Soft purples
-  - Sunset Glow - Warm pinks and oranges
+- **Automatic Time-Based Theming**: Site theme naturally follows the time of day
+  - 🌅 Sunrise (5-8 AM): Soft pinks & warm yellows
+  - ☀️ Morning (8 AM-12 PM): Warm & fresh
+  - 🌤️ Afternoon (12-6 PM): Bright & energetic blues
+  - 💜 Evening (6-9 PM): Soft lilac & lavender
+  - 🌙 Night (9 PM-5 AM): Deep blues & purples
 - **Google Calendar Integration**: Direct booking link for easy scheduling
 - **Activity Suggestions**: Clear ideas for potential meetups and activities
 - **Responsive Design**: Mobile-friendly and accessible across all screen sizes
@@ -59,9 +58,9 @@ The built files will be in the `dist` directory, ready for deployment.
 - **Google Calendar**: Already configured with live booking link
 - **Personal Branding**: Customized for Zeph Carroll
 - **Activity Focus**: Emphasizes social connection and varied interests
-- **Theme System**: Built-in theme switcher with 6 color schemes
-  - Themes are saved in localStorage for persistent user preference
-  - Easy to add new themes by editing `src/themes.css`
+- **Automatic Theming**: Theme changes based on user's local time
+  - Updates every minute to ensure accurate time-based theming
+  - No user interaction needed - works automatically
 
 ## 🛠 Tech Stack
 
@@ -71,26 +70,26 @@ The built files will be in the `dist` directory, ready for deployment.
 - **CSS3**: Modern styling with CSS custom properties for theming
 - **ESLint**: Code linting for quality assurance
 
-## 🎨 Theme System
+## 🎨 Automatic Theme System
 
-The site includes a comprehensive theming system built with CSS custom properties (variables):
+The site features an intelligent time-based theming system that automatically adjusts based on the user's local time to match the natural progression of the day:
 
-### Available Themes
-1. **Warm Sunset** (Default) - Cozy, warm oranges and browns
-2. **Dark Mode** - Midnight blue with cool blue accents
-3. **Ocean Breeze** - Fresh blues and teals
-4. **Forest** - Natural greens and earth tones
-5. **Lavender Dream** - Soft purples and lavenders
-6. **Sunset Glow** - Warm pinks and oranges
+### Time-Based Theme Schedule
+- **🌅 Sunrise (5:00 AM - 7:59 AM)**: Soft pinks and warm yellows - gentle wake-up colors
+- **☀️ Morning (8:00 AM - 11:59 AM)**: Warm and fresh tones - energizing start to the day  
+- **🌤️ Afternoon (12:00 PM - 5:59 PM)**: Bright energetic blues - peak daylight energy
+- **💜 Evening (6:00 PM - 8:59 PM)**: Soft lilac and lavender - calming twilight
+- **🌙 Night (9:00 PM - 4:59 AM)**: Deep blues and purples - easy on the eyes for late browsing
 
 ### How It Works
-- Click the theme picker button (🎨) in the top-right corner
-- Choose from 6 pre-built themes
-- Your selection is saved automatically in localStorage
-- Theme persists across page refreshes
+- Automatically detects user's local time
+- Updates theme every minute to ensure accuracy
+- Smooth transitions between themes mirror natural daylight progression
+- No user interaction required
+- Works on all devices and time zones
 
-### Adding New Themes
-To add a new theme, edit `src/themes.css` and add a new `[data-theme="your-theme"]` block with your custom color variables. Then update `src/ThemeSwitcher.tsx` to include the new theme in the themes array.
+### Customizing Theme Times
+To adjust the time ranges, edit `src/AutoTheme.tsx` and modify the `getThemeByTime()` function.
 
 ## 🎨 Design Philosophy
 

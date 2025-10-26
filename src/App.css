@@ -77,7 +77,6 @@ section p {
   width: 100%;
   max-width: 700px;
   margin: 0;
-  background-color: var(--bg-accent);
   border-radius: 12px;
   border-left: 4px solid var(--border-accent);
 }
