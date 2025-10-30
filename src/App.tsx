@@ -51,10 +51,10 @@ function App() {
               <h4>Need ideas of what to book time for?</h4>
               <div className="ideas-section">
                 <ul className="activity-list">
-                  <li>Book me for a date? (Or set your friend up on a blind one)</li>
-                  <li>Looking for a +1 to an event?</li>
-                  <li>Need help building furniture or with a computer?</li>
                   <li>Just to hang?</li>
+                  <li>For a date? (Or set your friend up on a blind one)</li>
+                  <li>As a +1 to an event?</li>
+                  <li>Need help building furniture or with a computer?</li>
                   <li>Or something else? We can text and figure that out</li>
                 </ul>
               </div>
