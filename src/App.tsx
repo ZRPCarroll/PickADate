@@ -1,10 +1,17 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import AutoTheme from './components/AutoTheme'
+import Calendar from './components/Calendar'
+import BookingForm from './components/BookingForm'
+import BookingSuccess from './components/BookingSuccess'
 import { getTimeOfDay } from './util/TimeUtils'
+import type { TimeSlot } from './types/calendar'
 
 function App() {
   const [themeReady, setThemeReady] = useState(false)
+  const [selectedSlot, setSelectedSlot] = useState<TimeSlot | null>(null)
+  const [showBookingForm, setShowBookingForm] = useState(false)
+  const [showSuccess, setShowSuccess] = useState(false)
 
   useEffect(() => {
     // Listen for when body gets the theme-ready class
@@ -23,6 +30,26 @@ function App() {
     return () => clearTimeout(timeout)
   }, [])
 
+  const handleSlotSelect = (slot: TimeSlot) => {
+    setSelectedSlot(slot)
+    setShowBookingForm(true)
+  }
+
+  const handleBookingSuccess = () => {
+    setShowBookingForm(false)
+    setShowSuccess(true)
+    setSelectedSlot(null)
+  }
+
+  const handleCancelBooking = () => {
+    setShowBookingForm(false)
+    setSelectedSlot(null)
+  }
+
+  const handleCloseSuccess = () => {
+    setShowSuccess(false)
+  }
+
   return (
     <>
       <AutoTheme />
@@ -40,7 +67,7 @@ function App() {
               </p>
               <p>
                 Because of that, I've created this website to meet some new people! 
-                You can tap the button below to book some time on my calendar.
+                You can access the calendar below to book some time with me.
               </p>
               <p>
                 Just provide a bit of info about what you'd like to do, I'll reach out, and we'll take it from there.
@@ -59,13 +86,26 @@ function App() {
                 </ul>
               </div>
             </section>
-            
-            <button 
-              className="booking-button"
-              onClick={() => window.open('https://calendar.app.google/5ESQseDcrtWT5Xvh9', '_blank', 'noopener,noreferrer')}
-            >
-              Book via Google Calendar
-            </button>
+
+            {/* Interactive Calendar */}
+            {!showBookingForm && (
+              <section>
+                <h2>Pick a Time</h2>
+                <Calendar 
+                  onSlotSelect={handleSlotSelect}
+                  selectedSlot={selectedSlot || undefined}
+                />
+              </section>
+            )}
+
+            {/* Booking Form */}
+            {showBookingForm && selectedSlot && (
+              <BookingForm
+                selectedSlot={selectedSlot}
+                onSuccess={handleBookingSuccess}
+                onCancel={handleCancelBooking}
+              />
+            )}
 
           </main>
 
@@ -89,6 +129,9 @@ function App() {
               </svg>
             </a>
           </footer>
+
+          {/* Success Modal */}
+          {showSuccess && <BookingSuccess onClose={handleCloseSuccess} />}
         </>
       )}
     </>

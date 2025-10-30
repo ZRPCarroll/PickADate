@@ -1,18 +1,20 @@
-# ZephSite - Personal Connection Hub
+# PickADate - Personal Connection Hub
 
-A friendly, approachable personal website built with Vite + React + TypeScript, designed for meeting new people and connecting over various activities through easy calendar booking.
+A friendly, approachable personal website built with Vite + React + TypeScript + Firebase, designed for meeting new people and connecting over various activities through an interactive calendar booking system.
 
 ## 🌟 Features
 
 - **Casual & Friendly Design**: Welcoming layout that encourages connection
+- **Interactive Calendar Booking**: Custom-built calendar showing real-time availability
+- **Firebase Backend**: Secure booking system with Firestore database
 - **Automatic Time-Based Theming**: Site theme naturally follows the time of day
   - 🌅 Sunrise (5-8 AM): Soft pinks & warm yellows
   - ☀️ Morning (8 AM-12 PM): Warm & fresh
   - 🌤️ Afternoon (12-6 PM): Bright & energetic blues
   - 💜 Evening (6-9 PM): Soft lilac & lavender
   - 🌙 Night (9 PM-5 AM): Deep blues & purples
-- **Google Calendar Integration**: Direct booking link for easy scheduling
-- **Activity Suggestions**: Clear ideas for potential meetups and activities
+- **Booking Management**: Full booking form with activity type selection
+- **Admin Dashboard**: Protected interface for managing availability and viewing bookings
 - **Responsive Design**: Mobile-friendly and accessible across all screen sizes
 - **Fast Performance**: Built with Vite for lightning-fast loading times
 - **TypeScript**: Fully typed for better development experience
@@ -32,19 +34,27 @@ This website serves as Zeph's personal connection hub - a place to meet new peop
 ### Prerequisites
 - Node.js (version 16 or higher)
 - npm or yarn
+- Firebase account (free tier works great)
 
 ### Installation & Development
-1. Install dependencies:
+
+1. **Clone and install dependencies:**
    ```bash
+   git clone https://github.com/ZRPCarroll/PickADate.git
+   cd PickADate
    npm install
    ```
 
-2. Start the development server:
+2. **Set up Firebase:**
+   - Follow the detailed guide in [FIREBASE_SETUP.md](./FIREBASE_SETUP.md)
+   - Copy `.env.example` to `.env.local` and fill in your Firebase credentials
+
+3. **Start the development server:**
    ```bash
    npm run dev
    ```
 
-3. Open [http://localhost:5173](http://localhost:5173) in your browser
+4. **Open [http://localhost:5173](http://localhost:5173) in your browser**
 
 ### Building for Production
 ```bash
@@ -55,18 +65,38 @@ The built files will be in the `dist` directory, ready for deployment.
 
 ## 🔗 Current Configuration
 
-- **Google Calendar**: Already configured with live booking link
+- **Firebase Firestore**: Real-time booking database
+- **Firebase Authentication**: Secure admin access
+- **Interactive Calendar**: Custom-built with date-fns
 - **Personal Branding**: Customized for Zeph Carroll
 - **Activity Focus**: Emphasizes social connection and varied interests
 - **Automatic Theming**: Theme changes based on user's local time
   - Updates every minute to ensure accurate time-based theming
   - No user interaction needed - works automatically
 
+## 📅 Using the Calendar System
+
+### For Visitors (Booking Time)
+1. Browse the interactive calendar
+2. Click on a date with available slots (marked with a dot)
+3. Select a time slot
+4. Fill out the booking form with your details
+5. Receive confirmation
+
+### For Admin (Managing Availability)
+1. Navigate to `/admin` route (you'll need to add React Router)
+2. Log in with your Firebase admin credentials
+3. Create availability slots
+4. View and manage bookings
+5. See booking details including contact info and preferences
+
 ## 🛠 Tech Stack
 
 - **Vite**: Fast build tool and development server
-- **React 18**: Modern React with hooks
+- **React 19**: Modern React with hooks
 - **TypeScript**: Type safety and better development experience
+- **Firebase**: Backend services (Firestore + Authentication)
+- **date-fns**: Powerful date utility library
 - **CSS3**: Modern styling with CSS custom properties for theming
 - **ESLint**: Code linting for quality assurance
 
